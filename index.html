@@ -2,220 +2,157 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToLine - Marketplace Produk Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Panggil CSS Store kamu (Bawaan MainActivityCloud) -->
-<link rel="stylesheet" href="style_3.css">
-
+<meta property="og:description" content="Beli akun premium murah, Proses cepat & aman. Barang👇" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============ GAYA LANDING PAGE ============ */
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-.landing-style{background:#0a0a0a;color:#fff;font-family:'Poppins',sans-serif;}
-.container-landing{max-width:1100px;margin:0 auto;padding:0 20px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{background:#0a0a0a;color:#fff}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* NAVBAR GLOBAL */
-header{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,0.5);position:sticky;top:0;z-index:999;font-family:'Poppins',sans-serif;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;max-width:1100px;margin:0 auto;padding-inline:20px;}
+/* NAVBAR */
+header{background:#111;box-shadow:0 2px 10px rgba(0,0,0,0.3);position:sticky;top:0;z-index:999}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
 .logo{font-size:24px;font-weight:700;color:#fff}
 .logo span{color:#FFD700}
 .nav-links{display:flex;gap:30px;list-style:none}
-.nav-links a{text-decoration:none;color:#aaa;font-weight:500;transition:.2s;cursor:pointer;}
+.nav-links a{text-decoration:none;color:#aaa;font-weight:500;transition:.2s}
 .nav-links a:hover{color:#FFD700}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .hamburger span{width:25px;height:3px;background:#aaa;border-radius:2px}
 
-/* KONTEN LANDING */
-section{padding:70px 0}
+/* SECTION */
+section{padding:90px 0}
 #dashboard{background:linear-gradient(135deg,#111 0%,#1a1a1a 100%);text-align:center}
 #dashboard h1{font-size:42px;margin-bottom:16px}
 #dashboard h1 span{color:#FFD700}
 #dashboard p{font-size:18px;color:#aaa;margin-bottom:30px}
-.btn-yellow{background:#FFD700;color:#000;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block}
+.btn{padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;transition:.3s;display:inline-block}
+.btn-yellow{background:#FFD700;color:#000}
+.btn-yellow:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(255,215,0,0.3)}
 
 #rincian{background:#111}
-.section-title-web{text-align:center;font-size:32px;font-weight:700;margin-bottom:16px}
+.section-title{text-align:center;font-size:32px;font-weight:700;margin-bottom:16px}
 .section-sub{text-align:center;color:#aaa;margin-bottom:60px;max-width:700px;margin-inline:auto}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
 .feature-box{background:#1a1a1a;padding:35px;border-radius:16px;border:1px solid #222;text-align:left}
+.feature-icon{font-size:40px;margin-bottom:16px}
 .feature-box h3{font-size:20px;margin-bottom:10px;color:#FFD700}
 .feature-box p{color:#aaa;line-height:1.7}
 
 #download{background:#000;text-align:center}
 .btn-mediafire{background:#00a4e4;color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:600;font-size:18px;display:inline-flex;align-items:center;gap:12px}
+.btn-mediafire:hover{background:#0087c4}
 
-.landing-footer{background:#0a0a0a;color:#555;padding:30px 0;text-align:center;font-size:14px;border-top:1px solid #111}
+footer{background:#0a0a0a;color:#555;padding:30px 0;text-align:center;font-size:14px;border-top:1px solid #111}
 
+/* MOBILE */
 @media(max-width:768px){
-  .nav-links{position:fixed;top:70px;right:-100%;flex-direction:column;background:#111;width:100%;height:100vh;padding:40px 20px;gap:20px;transition:.3s}
+  .nav-links{position:fixed;top:70px;right:-100%;flex-direction:column;background:#111;width:70%;height:100vh;padding:40px 20px;gap:20px;transition:.3s}
   .nav-links.active{right:0}
   .hamburger{display:flex}
   #dashboard h1{font-size:28px}
-}
-
-/* ============ GAYA STORE (Penyesuaian) ============ */
-#view-store { display: none; background: var(--bg); min-height: 100vh;}
-/* Menghindari tabrakan font di Store */
-#view-store * { font-family: 'Inter', -apple-system, sans-serif; }
-#view-store .brand { font-family: 'Poppins', sans-serif; }
 </style>
 </head>
-<body class="landing-style">
+<body>
 
-<!-- NAVBAR SELALU ADA -->
 <header>
-  <nav>
-    <div class="logo">To<span>Line</span></div>
-    <ul class="nav-links" id="navMenu">
-      <!-- Navigasi pindah ke Landing Page -->
-      <li><a onclick="switchView('landing', '#dashboard')">Dashboard</a></li>
-      <li><a onclick="switchView('landing', '#rincian')">Rincian</a></li>
-      <li><a onclick="switchView('landing', '#download')">Download</a></li>
-      
-      <!-- Navigasi pindah ke Store Web -->
-      <li><a onclick="switchView('store')" style="color:#FFD700;font-weight:700">Store (Web)</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+  <div class="container">
+    <nav>
+      <div class="logo">To<span>Line</span></div>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#dashboard" onclick="closeMenu()">Dashboard</a></li>
+        <li><a href="#rincian" onclick="closeMenu()">Rincian</a></li>
+        <li><a href="#download" onclick="closeMenu()">Download</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<!-- ============================================== -->
-<!-- HALAMAN 1: LANDING PAGE -->
-<!-- ============================================== -->
-<div id="view-landing">
-  <section id="dashboard">
-    <div class="container-landing">
-      <h1>Produk Digital, <span>ToLine</span></h1>
-      <p>Layanan WA, proses cepat, aman dan terpercaya.</p>
-      <a onclick="switchView('landing', '#download')" class="btn-yellow" style="cursor:pointer">Download Aplikasi</a>
-    </div>
-  </section>
-
-  <section id="rincian">
-    <div class="container-landing">
-      <h2 class="section-title-web">Tentang Aplikasi ToLine</h2>
-      <p class="section-sub">ToLine adalah platform jual beli produk digital terpercaya.</p>
-      <div class="grid-3">
-        <div class="feature-box">
-          <h3>🛒 Marketplace Digital</h3>
-          <p>Jual dan beli berbagai produk digital seperti Akun Premium Spotify, Netflix, Capcut Pro, dll.</p>
-        </div>
-        <div class="feature-box">
-          <h3>⚡ Proses Otomatis & Cepat</h3>
-          <p>Tinggal pilih produk, bayar, dan akun langsung dikirim ke WA kamu.</p>
-        </div>
-        <div class="feature-box">
-          <h3>🔒 Aman & Terpercaya</h3>
-          <p>Semua transaksi tercatat dan bergaransi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="download">
-    <div class="container-landing">
-      <h2 class="section-title-web">Download Aplikasi ToLine</h2>
-      <p style="opacity:0.8;margin-bottom:30px">Versi 1.3.16.342.00369 Update+ | Android 8.0+ | 1,10MB</p>
-      <a href="https://www.mediafire.com/file/1n5u0k2287ixkyn/ToLine.apk/file" target="_blank" class="btn-mediafire">
-        📥 Download via MediaFire
-      </a>
-    </div>
-  </section>
-
-  <footer class="landing-footer">
-    <div class="container-landing">
-      <p>© 2026 ToLine. Marketplace Produk Digital STARPIT.MY.ID</p>
-    </div>
-  </footer>
-</div>
-
-
-<!-- ============================================== -->
-<!-- HALAMAN 2: STORE VERSI WEB -->
-<!-- ============================================== -->
-<div id="view-store">
-  <div id="app">
-    <!-- TOP BAR STORE -->
-    <div class="topbar">
-      <div class="topbar-row">
-        <div class="brand">To<span>Line</span></div>
-        <div class="icon-btn" onclick="goTab('account')">👤</div>
-      </div>
-      <div class="search-box">
-        <span>🔍</span>
-        <input id="search-input" type="text" placeholder="Cari produk digital...">
-        <span class="go" id="search-go">Cari</span>
-      </div>
-    </div>
-
-    <!-- 4 SCREEN / TAB STORE -->
-    <div id="screen-home" class="screen active"></div>
-    <div id="screen-search" class="screen"></div>
-    <div id="screen-history" class="screen"></div>
-    <div id="screen-account" class="screen"></div>
-
-    <!-- BOTTOM NAV STORE -->
-    <div class="bottomnav">
-      <div class="nav-btn active" data-tab="home"><span class="ic">🏠</span>Beranda</div>
-      <div class="nav-btn" data-tab="search"><span class="ic">🔍</span>Cari</div>
-      <div class="nav-btn" data-tab="history"><span class="ic">🧾</span>Riwayat</div>
-      <div class="nav-btn" data-tab="account"><span class="ic">👤</span>Akun</div>
-    </div>
-
-    <!-- DETAIL PRODUK -->
-    <div class="sheet-overlay" id="sheet-overlay">
-      <div class="sheet" id="sheet-body"></div>
-    </div>
-
-    <!-- TOAST -->
-    <div class="toast" id="toast"></div>
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <div class="container">
+    <h1>Produk Digital, <span>ToLine</span></h1>
+    <p>Layanan WA, proses cepat, aman dan terpercaya.</p>
+    <a href="#download" class="btn btn-yellow">Download Aplikasi</a>
   </div>
-</div>
+</section>
+
+<!-- RINCIAN = PENJELASAN APLIKASI -->
+<section id="rincian">
+  <div class="container">
+    <h2 class="section-title">Tentang Aplikasi ToLine</h2>
+    <p class="section-sub">ToLine adalah platform jual beli produk digital terpercaya. Kami memudahkan kamu mendapatkan akun premium, bot, dan layanan digital lainnya dengan proses instan.</p>
+
+    <div class="grid-3">
+      <div class="feature-box">
+        <div class="feature-icon">🛒</div>
+        <h3>Marketplace Digital</h3>
+        <p>Jual dan beli berbagai produk digital seperti Akun Premium Spotify, Netflix, Capcut Pro, Wink, dan lainnya. Semua produk 100% legal & bergaransi.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">⚡</div>
+        <h3>Proses Otomatis & Cepat</h3>
+        <p>Tinggal pilih produk, bayar, dan akun langsung dikirim ke WA kamu. Tanpa nunggu lama. CS kami juga aktif 24 jam buat bantuin kamu.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">🔒</div>
+        <h3>Aman & Terpercaya</h3>
+        <p>Semua transaksi tercatat. Ada sistem rating penjual dan garansi uang kembali jika produk tidak sesuai. Udah dipercaya 1000+ pelanggan.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">💳</div>
+        <h3>Pembayaran Fleksibel</h3>
+        <p>Bisa bayar via E-Wallet, Transfer Bank, dan QRIS. Harga transparan, ada harga coret biar kamu tau lagi diskon.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">📱</div>
+        <h3>Desain Simpel</h3>
+        <p>Tampilan aplikasi dibuat se-simple mungkin biar enak dipake. Ada fitur cari, filter kategori, dan riwayat transaksi lengkap.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">🎧</div>
+        <h3>Support Via WhatsApp</h3>
+        <p>Ada kendala? Langsung chat admin di WA. Respon cepat dan solusi tuntas. Kami jamin kepuasan pelanggan nomor 1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section id="download">
+  <div class="container">
+    <h2 class="section-title">Download Aplikasi ToLine</h2>
+    <p style="opacity:0.8;margin-bottom:30px">Versi 1.3.16.342.00369 Update+ | Android 8.0+ | 1,10MB</p>
+    <a href="https://www.mediafire.com/file/1n5u0k2287ixkyn/ToLine.apk/file" target="_blank" class="btn-mediafire">
+      📥 Download via MediaFire
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 ToLine. Marketplace Produk Digital STARPIT.MY.ID</p>
+  </div>
+</footer>
 
 <script>
-// Logic Navbar Mobile
 function toggleMenu(){
   document.getElementById('navMenu').classList.toggle('active');
 }
 function closeMenu(){
   document.getElementById('navMenu').classList.remove('active');
 }
-
-// Logic Ganti Halaman (Landing <-> Store)
-function switchView(view, anchor = null) {
-  closeMenu();
-  const landing = document.getElementById('view-landing');
-  const store = document.getElementById('view-store');
-  
-  if (view === 'store') {
-    landing.style.display = 'none';
-    store.style.display = 'block';
-    window.scrollTo(0, 0); // Reset scroll pas buka store
-  } else {
-    landing.style.display = 'block';
-    store.style.display = 'none';
-    if (anchor) {
-      document.querySelector(anchor).scrollIntoView();
-    }
-  }
-}
-
-// Cek jika ada orang buka link pakai Share Produk (?p=ID)
-window.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('p')) {
-    // Kalau ada link produk, langsung arahkan ke Store!
-    switchView('store');
-  }
-});
 </script>
 
-<!-- Panggil Script JS Store Kamu -->
-<script src="app_3.js"></script>
-
 </body>
-  </html>
-  
+</html>
