@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ToLine Store — Web Version</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<!-- Panggil CSS khusus tema Store -->
+<link rel="stylesheet" href="style_3.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="topbar-row">
+      <div class="brand">To<span>Line</span></div>
+      <div class="icon-btn" onclick="goTab('account')">👤</div>
+    </div>
+    <div class="search-box">
+      <span>🔍</span>
+      <input id="search-input" type="text" placeholder="Cari produk digital...">
+      <span class="go" id="search-go">Cari</span>
+    </div>
+  </div>
+
+  <!-- ============ 4 SCREEN / TAB ============ -->
+  <div id="screen-home" class="screen active"></div>
+  <div id="screen-search" class="screen"></div>
+  <div id="screen-history" class="screen"></div>
+  <div id="screen-account" class="screen"></div>
+
+  <!-- ============ BOTTOM NAV (4 navigasi) ============ -->
+  <div class="bottomnav">
+    <div class="nav-btn active" data-tab="home"><span class="ic">🏠</span>Beranda</div>
+    <div class="nav-btn" data-tab="search"><span class="ic">🔍</span>Cari</div>
+    <div class="nav-btn" data-tab="history"><span class="ic">🧾</span>Riwayat</div>
+    <div class="nav-btn" data-tab="account"><span class="ic">👤</span>Akun</div>
+  </div>
+
+  <!-- ============ DETAIL PRODUK (bottom sheet) ============ -->
+  <div class="sheet-overlay" id="sheet-overlay">
+    <div class="sheet" id="sheet-body"></div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast"></div>
+
+</div>
+
+<!-- Panggil JS khusus logika Store -->
+<script src="app_3.js"></script>
+</body>
+</html>
