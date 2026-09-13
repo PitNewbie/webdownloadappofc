@@ -430,3 +430,14 @@ input, select { font-family: inherit; }
   font-weight: bold;
   }
   
+.bottomnav {
+  position: absolute; /* Ubah dari fixed ke absolute */
+  bottom: 0; left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  z-index: 30;
+}
